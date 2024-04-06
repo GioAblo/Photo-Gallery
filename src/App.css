@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+.app {
+    font-family: "Rubik", sans-serif;     
+    color: white;
+}
+
+.active {
+    color: #00ffff;
+}
+
+
+.spinner {
+    --size: 30px;
+    --color: white;
+    width: 100px;
+    height: 100px;
+    position: relative;
+  }
+  
+  .spinner::after,.spinner::before {
+    box-sizing: border-box;
+    position: absolute;
+    content: "";
+    width: var(--size);
+    height: var(--size);
+    top: 50%;
+    animation: up 2.4s cubic-bezier(0, 0, 0.24, 1.21) infinite;
+    left: 50%;
+    background: var(--color);
+    box-shadow: 0 0 calc(var(--size) / 3) rgba(0, 0, 0, 0.25);
+  }
+  
+  .spinner::after {
+    background: var(--color);
+    top: calc(50% - var(--size));
+    left: calc(50% - var(--size));
+    animation: down 2.4s cubic-bezier(0, 0, 0.24, 1.21) infinite;
+  }
+  
+  @keyframes down {
+    0%, 100% {
+      transform: none;
+    }
+  
+    25% {
+      transform: translateX(100%);
+    }
+  
+    50% {
+      transform: translateX(100%) translateY(100%);
+    }
+  
+    75% {
+      transform: translateY(100%);
+    }
+  }
+  
+  @keyframes up {
+    0%, 100% {
+      transform: none;
+    }
+  
+    25% {
+      transform: translateX(-100%);
+    }
+  
+    50% {
+      transform: translateX(-100%) translateY(-100%);
+    }
+  
+    75% {
+      transform: translateY(-100%);
+    }
+  }
+
+  
+
+  .loader {
+    width: 60px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .ball {
+    list-style: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #fff;
+  }
+  
+  .ball:nth-child(1) {
+    animation: bounce-1 2.1s ease-in-out infinite;
+  }
+  
+  @keyframes bounce-1 {
+    50% {
+      transform: translateY(-18px);
+      width: 6px;
+      height: 6px;
+    }
+  }
+  
+  .ball:nth-child(2) {
+    animation: bounce-3 2.1s ease-in-out 0.3s infinite;
+  }
+  
+  @keyframes bounce-2 {
+    50% {
+      transform: translateY(-18px);
+      width: 6px;
+      height: 6px;
+    }
+  }
+  
+  .ball:nth-child(3) {
+    animation: bounce-3 2.1s ease-in-out 0.6s infinite;
+  }
+  
+  @keyframes bounce-3 {
+    50% {
+      transform: translateY(-18px);
+      width: 6px;
+      height: 6px;
+    }
+  }

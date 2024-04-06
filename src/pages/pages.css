@@ -1,0 +1,60 @@
+.input {
+    width: 90%;
+    min-width: 270px;
+    background-color: #212121;
+    /* max-width: 274px; */
+    /* width: 82%; */
+    height: 35px;
+    padding: 12px;
+    /* text-align: center; */
+    border: 2px solid white;
+    border-radius: 9px;
+  }
+  
+  .input:focus {
+    color: rgb(0, 255, 255);
+    background-color: #212121;
+    outline-color: #00ffff;
+    box-shadow: -2px -1px 10px rgb(0, 255, 255);
+    transition: .1s;
+    transition-property: box-shadow;
+  }
+
+ img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  display: inline-block;
+ }
+
+/**** Grid Wraper  */
+ ul > li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ } 
+
+
+ ul > li > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+ }
+
+ ul {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-auto-rows: 310px;
+  grid-auto-flow: dense;
+ }
+
+
+ .Keybtn::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #00ffff;
+ }
